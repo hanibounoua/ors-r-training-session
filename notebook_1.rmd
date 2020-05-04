@@ -7,7 +7,28 @@ always_allow_html: true
 ---
 
 
-## Introduction :
+## Sommaire:
+
+**[1. Introduction](#heading--1)**
+
+**[2. Interface](#heading--2)**
+
+**[3 Les Notion de base](#heading--3)**
+* [3.1. Les objets Dans R](#heading--3-1)
+* [3.2. Les variables](#heading--3-2)
+* [3.3. Les Conteneurs](#heading--3-3)
+* [3.4. Les Fonctions](#heading--3-4)
+* [3.5. Les structures conditionnelles](#heading--3-5)
+
+**[4. Manipulation des données](#heading--4)**
+* [4.1. Les Packages](#heading--4-1)
+* [4.2. Importer la donnée](#heading--4-2)
+* [4.3. Exploration des données](#heading--4-3)
+
+**[5. Références](#heading--4)**
+
+
+## Introduction : <div id="heading--1" />
 
 R est un langage de programmation utiliser dans les analyses statistiques, créer en août 1993. Il est :
 
@@ -17,7 +38,7 @@ R est un langage de programmation utiliser dans les analyses statistiques, crée
 * Multi-plateforme.
 
 
-### Interface :
+## Interface : <div id="heading--2" />
 
 Programmer en langage R, requière en premier l'installation de l'**interpréteur R**, et d'un IDE (Integrated Developpement Envirement). Dans cette formation, nous allons travailler avec **RStudio**, un IDE gratuit et open source. On peut les télécharger gratuitement des liens ci-dessous.
 
@@ -36,9 +57,9 @@ La figure ci-dessous represente l'interface de l 'IDE (Integrated Developpement 
 
 
 
-### Les Notion de base:
+## Les Notions de base: <div id="heading--3"/>
 
-#### Les objets Dans R:
+### Les objets Dans R: <div id="heading--3-1"/>
 
 R étant un langage orienté objet, les composantes de base de ce langage sont des objets. On distingue plusieurs **classes** d'objets :
 
@@ -55,7 +76,7 @@ Donc R nous permet en premier lieu de manipuler ces objets, nous allons aborder 
 1. Les Opérateurs Arithmétique ; ces opérateurs nous permettent de manipuler des nombres (entiers, réelles, complexes).
 2. Les Opérateurs Logique ; vont nous permettre de faire des tests (une opération dont le résultat et vrai ou faux, dans ce cas `TRUE` ou `FALSE`), et donc d'opérer sur des booléens.
 
-##### Les opérateurs Arithmétiques:
+#### Les opérateurs Arithmétiques:
 
 La première chose qu'on peut remarquer, c'est que R est une calculatrice, qui est est plus puissante plus précise et plus rapide que n'importe quelle autre calculatrice. Le tableau ci-dessous contient les descriptions de chaque opérateur arithmétiques, ainsi que des exemples:
 
@@ -70,7 +91,7 @@ La première chose qu'on peut remarquer, c'est que R est une calculatrice, qui e
 | `^` ou `**` | La puissance | `2 ^ 3` où `2 ** 3` | `r 2 ^ 3` |
 
 
-##### Les opérateurs logiques:
+#### Les opérateurs logiques:
 
 Ces opérateurs sont très importants en programmation ; dans des structures de code qu'on appelle les structures conditionnelles et qu'on va voir un peu plus loin, mais aussi en statistiques ; dans ce qu'on appelle les filtres, *avec un peu de structures conditionnelles*. Ci-dessous,  ce tableau contient les descriptions de chaque opérateur logiques, ainsi que des exemples:
 
@@ -93,7 +114,7 @@ Il existe d'autres opérateurs, que l'on va voir plus loins dans la formation.
 
 
 
-#### Les variables :
+### Les variables : <div id="heading--3-2"/>
 À ce niveau de cette formation, vous savez faire des calculs avec R, qui peuvent être plus ou moins complexe. Mais si je fais un traitement qui exige de moi de faire une succession d'opérations sur des données, il est judicieux de stocker mes données quelque part, pour des soucis de reproductibilité. Et la notion de variable en programmation sert à ça. Une Variable est caractérisée par deux attributs :
 
 1. Le nom de la variable ; c'est ce qui va nous permette d'accéder à la donnée. Le nom d'une variable ne peut pas contenir :
@@ -120,13 +141,13 @@ leResultat
 ```
 
 
-#### Les Conteneurs :
+### Les Conteneurs : <div id="heading--3-3"/>
 
 
 Un conteneur est une collection de données, on peut le stocker dans une variable. Dans le langage R, on distingue quatre types de conteneur. Chaque type a des propriétés.
 
 
-##### Les Vecteurs :
+#### Les Vecteurs :
 
 un vecteur est caractérisé pas deux propriétés principales:
 
@@ -145,7 +166,7 @@ monPremierVecteur[2]
 ```
 
 
-##### Les matrices :
+#### Les matrices :
 
 Une matrice est caractérisé par sa dimension qui est le nombre de ligne et le nombre de collonnes. Et comme pour les vecteur elle ne peut pas contenirdes objets de différents type.
 
@@ -157,7 +178,7 @@ maPremiereMatrice[1, 2]
 maPremiereMatrice[,2]
 maPremiereMatrice[1,]
 ```
-##### Les Listes :
+#### Les Listes :
 
 Contrairement aux conteneurs vue precedement les listes, nous permettent de stocker des objets de différents types, `r class('h')`, `r class(2L)`, et même des conteneurs, elles sont caractérisées par leurs longueurs qui est le nombre d'éléments qu'elles contiennent.
 
@@ -172,7 +193,7 @@ maDeuxiemeListe$leTitre
 ```
 
 
-##### Les data frames :
+#### Les data frames :
 
 Les data frames ou tableau de données, ou table de donnée sont semblables aux tableaux sur le logiciel MS Excel, ou SPSS. Ils sont caractérisés pas des colonnes (que l'on appelle en statistiques Variable); qui ont un nom, et par des lignes ; sue l'on appelle des observations. Le croisement entre une ligne et une colonne s'appelle une case ; et elle contents une valeur.
 
@@ -187,7 +208,7 @@ monPremierDF$Genre[1]
 ```
 
 
-#### Les fonctions :
+### Les fonctions : <div id="heading--3-4"/>
 
 Les fonctions dans R sont des variables spéciales, elles sont caractérisées pas un nom, et par des arguments, elles nous permettent d'exécuter des taches (Qui peut être soit un traitement, ou un calcule ; dans ce cas, elle nous retourne une valeur), dans Excel une fonction est appelée formule.
 
@@ -211,7 +232,7 @@ help(xor)
 ```
 
 
-#### Les structures conditionnelles :
+### Les structures conditionnelles : <div id="heading--3-5"/>
 
 Dans des analyses statistiques, la structure conditionnelles qu'on utilise les plus c'est la fonction ; `ifelse()`, elle prend trois arguments que nous allons détailler dans ce qui suit :
 
@@ -226,9 +247,9 @@ ifelse(2 < 1, "Deux est effectivement superieur a un", "C 'est faux")
 ```
 
 
-### Manipulation des données :
+## Manipulation des données : <div id="heading--4"/>
 
-#### Les Packages :
+### Les Packages : <div id="heading--4-1"/>
 
 Dans ce qui suit, vous allez voir les différents aspect de la manipulation des données, en premier nous allons voir la notion de **Package**, et nous allons en voir un en particulier le **Tidyverse**.
 
@@ -252,7 +273,7 @@ library('tidyverse')
 ![**Figure 3**: Le workflow du data scientiste](./img/r4ds-hadley-wickham-workflow.png)
 
 
-#### Importer la donnée :
+### Importer la donnée : <div id="heading--4-2"/>
 
 Les données peuvent se trouver sous différentes formes, les plus communes sont :
 
@@ -295,15 +316,15 @@ flights_db <- tbl(con, "flights") %>%
 flights_db
 ```
 
-#### Exploration des données:
+### Exploration des données : <div id="heading--4-3"/>
 
 Pour executer une tache (Transformation, Calcule, Visualisation) sur des données; ces derniere doivent avoir une forme spécifique. Et donc on doit les transformer. pour cela le package **tidyverse** met à notre disposition deux packages: **tidyr** et **dplyr**.
 
 Nous allons parcourir, les fonctions principale de ces packages.
 
-##### Opérations sur la forme de la table:
+#### Opérations sur la forme de la table:
 
-###### gather ou pivot_longer:
+##### gather ou pivot_longer:
 
 ```{r}
 confirmed <- df_1 %>% 
@@ -314,7 +335,7 @@ recovered <- df_3 %>%
   pivot_longer(ends_with("/20"), names_to = "date", values_to = "recovered")
 ```
 
-###### Speard ou pivot_wider:
+##### Speard ou pivot_wider:
 
 ```{r}
 confirmed %>% 
@@ -324,9 +345,9 @@ confirmed %>%
 
 
 
-##### Opérations sur les colonnes:
+#### Opérations sur les colonnes:
 
-###### **Renomer les colonnes**:
+##### Renomer les colonnes:
 
 Nous pouvon le faire de deux façon:
 
@@ -347,7 +368,7 @@ head(confirmed)
 ```
 
 
-###### **Selcetionner des colonnes**:
+##### Selcetionner des colonnes:
 
 Le package **dplyr** est a R ce qu'est le language **SQL** a un SGBD. il met a notre disposition enormement d'outils comme la fonction `select`.
 
@@ -361,7 +382,7 @@ confirmed %>%
 
 ```
 
-###### **Ajouter une nouvelle colonne**:
+##### Ajouter une nouvelle colonne:
 
 La fonction nous permetant de le faire est `mutate` du package **dplyr**.
 
@@ -379,7 +400,7 @@ recovered <- recovered %>%
 ```
 
 
-##### **Opérations sur les lignes**:
+#### Opérations sur les lignes:
 
 Comme pour `select` et `mutate` le package **dplyr** viens avec pleins d'autres fonctions nous en citerons les plus importantes dans cette section.
 
@@ -393,7 +414,7 @@ confirmed %>%
 
 ```
 
-###### **Arranger les Valeurs**:
+##### Arranger les Valeurs:
 
 Pour explorer les valeurs numerique il est important de les ordonnés afin de verifier si il y a des annomalies. Pour cela on utilise la fonction, `arrange`.
 
@@ -404,7 +425,7 @@ confirmed %>%
 ```
 
 
-###### **Grouper nos données**:
+##### Grouper nos données:
 
 Grouper les données est necessaire quand on veut procéder a une agrégation, substituer les valeurs aberrantes, ou les valeurs manquantes. nous utiliserons la fonction `group_by`.
 
@@ -438,7 +459,7 @@ recovered <- recovered %>%
   ungroup()
 ```
 
-###### **Agrégé les données**:
+##### Agrégé les données:
 
 La derniere fonction que nous allons voir et `summarise`, elle nous permet d'agréger nos données, nous l'utilisons souvant avec `group_by`.
 
@@ -453,7 +474,7 @@ confirmed %>%
 ```
 
 
-###### **Joindre plusieurs data frame**:
+##### Joindre plusieurs data frame:
 
 
 ```{r}
@@ -472,7 +493,7 @@ all_data <- confirmed %>%
 head(all_data)
 ```
 
-## Reférences :
+## Références : <div id="heading--4" />
 
 1. [**R For Data Science**](https://r4ds.had.co.nz/), par **Garrett Grolemund** et **Hadley Wickham** de *RStudio*.
 2. [**RYouWithMe**](https://rladiessydney.org/courses/ryouwithme/), par **Lisa Williams** de *R-Ladies Sydney*.
