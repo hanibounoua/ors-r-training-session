@@ -4,8 +4,10 @@ author: Hani Bounoua
 date: 3 Mai 2020
 output: html_document
 always_allow_html: true
+logo: ./img/logo.png
 ---
 
+![ORS Logo](./img/logo.png "100px")
 
 ## Sommaire:
 
@@ -14,6 +16,8 @@ always_allow_html: true
 **[2. Interface](#heading--2)**
 
 **[3 Les Notion de base](#heading--3)**
+
+
 * [3.1. Les objets Dans R](#heading--3-1)
 * [3.2. Les variables](#heading--3-2)
 * [3.3. Les Conteneurs](#heading--3-3)
@@ -21,14 +25,21 @@ always_allow_html: true
 * [3.5. Les structures conditionnelles](#heading--3-5)
 
 **[4. Manipulation des données](#heading--4)**
+
+
 * [4.1. Les Packages](#heading--4-1)
 * [4.2. Importer la donnée](#heading--4-2)
 * [4.3. Exploration des données](#heading--4-3)
 
 **[5. Références](#heading--4)**
 
+---
 
-## Introduction : <div id="heading--1" />
+
+
+
+<div id="heading--1"/>
+## Introduction:
 
 R est un langage de programmation utiliser dans les analyses statistiques, créer en août 1993. Il est :
 
@@ -37,8 +48,11 @@ R est un langage de programmation utiliser dans les analyses statistiques, crée
 * Open source, et gratuit.
 * Multi-plateforme.
 
+---
 
-## Interface : <div id="heading--2" />
+
+<div id="heading--2"/>
+## Interface:
 
 Programmer en langage R, requière en premier l'installation de l'**interpréteur R**, et d'un IDE (Integrated Developpement Envirement). Dans cette formation, nous allons travailler avec **RStudio**, un IDE gratuit et open source. On peut les télécharger gratuitement des liens ci-dessous.
 
@@ -55,11 +69,15 @@ La figure ci-dessous represente l'interface de l 'IDE (Integrated Developpement 
 
 ![**Figure 2** L'interface de l'IDE RStudio.](./img/r-studio.png)
 
+---
 
 
-## Les Notions de base: <div id="heading--3"/>
+<div id="heading--3"/>
+## Les Notions de base:
 
-### Les objets Dans R: <div id="heading--3-1"/>
+
+<div id="heading--3-1"/>
+### Les objets Dans R:
 
 R étant un langage orienté objet, les composantes de base de ce langage sont des objets. On distingue plusieurs **classes** d'objets :
 
@@ -113,8 +131,9 @@ Ces opérateurs sont très importants en programmation ; dans des structures de 
 Il existe d'autres opérateurs, que l'on va voir plus loins dans la formation.
 
 
+<div id="heading--3-2"/>
+### Les variables :
 
-### Les variables : <div id="heading--3-2"/>
 À ce niveau de cette formation, vous savez faire des calculs avec R, qui peuvent être plus ou moins complexe. Mais si je fais un traitement qui exige de moi de faire une succession d'opérations sur des données, il est judicieux de stocker mes données quelque part, pour des soucis de reproductibilité. Et la notion de variable en programmation sert à ça. Une Variable est caractérisée par deux attributs :
 
 1. Le nom de la variable ; c'est ce qui va nous permette d'accéder à la donnée. Le nom d'une variable ne peut pas contenir :
@@ -140,8 +159,8 @@ leResultat <- maPremiereVariable - maDeuxiemeVariable
 leResultat
 ```
 
-
-### Les Conteneurs : <div id="heading--3-3"/>
+<div id="heading--3-3"/>
+### Les Conteneurs :
 
 
 Un conteneur est une collection de données, on peut le stocker dans une variable. Dans le langage R, on distingue quatre types de conteneur. Chaque type a des propriétés.
@@ -165,7 +184,6 @@ monPremierVecteur[2:4]
 monPremierVecteur[2]
 ```
 
-
 #### Les matrices :
 
 Une matrice est caractérisé par sa dimension qui est le nombre de ligne et le nombre de collonnes. Et comme pour les vecteur elle ne peut pas contenirdes objets de différents type.
@@ -178,6 +196,7 @@ maPremiereMatrice[1, 2]
 maPremiereMatrice[,2]
 maPremiereMatrice[1,]
 ```
+
 #### Les Listes :
 
 Contrairement aux conteneurs vue precedement les listes, nous permettent de stocker des objets de différents types, `r class('h')`, `r class(2L)`, et même des conteneurs, elles sont caractérisées par leurs longueurs qui est le nombre d'éléments qu'elles contiennent.
@@ -191,7 +210,6 @@ maPremiereListe[[1]]
 maDeuxiemeListe <- list(leTitre = "Introduction A la Programmation R", nombreQlq = 23, Booleen = TRUE)
 maDeuxiemeListe$leTitre
 ```
-
 
 #### Les data frames :
 
@@ -207,8 +225,8 @@ monPremierDF[1, "Genre"]
 monPremierDF$Genre[1]
 ```
 
-
-### Les fonctions : <div id="heading--3-4"/>
+<div id="heading--3-4"/>
+### Les fonctions :
 
 Les fonctions dans R sont des variables spéciales, elles sont caractérisées pas un nom, et par des arguments, elles nous permettent d'exécuter des taches (Qui peut être soit un traitement, ou un calcule ; dans ce cas, elle nous retourne une valeur), dans Excel une fonction est appelée formule.
 
@@ -227,12 +245,12 @@ L'opérateur **ou exclusif**, `xor()` est une fonction elle prend deux arguments
       La fonction la plus importante en R est; la fonction `help()`, elle prend en arguement le nom d'une fonction et elle nous retourn la d'escription détaillé de cette fonction.
 
 **Exemple**:
-```{r}
+```{r eval=FALSE}
 help(xor)
 ```
 
-
-### Les structures conditionnelles : <div id="heading--3-5"/>
+<div id="heading--3-5"/>
+### Les structures conditionnelles :
 
 Dans des analyses statistiques, la structure conditionnelles qu'on utilise les plus c'est la fonction ; `ifelse()`, elle prend trois arguments que nous allons détailler dans ce qui suit :
 
@@ -246,10 +264,13 @@ ifelse(2 < 1, "Deux est effectivement superieur a un", "C 'est faux")
 
 ```
 
+---
 
-## Manipulation des données : <div id="heading--4"/>
+<div id="heading--4"/>
+## Manipulation des données :
 
-### Les Packages : <div id="heading--4-1"/>
+<div id="heading--4-1"/>
+### Les Packages :
 
 Dans ce qui suit, vous allez voir les différents aspect de la manipulation des données, en premier nous allons voir la notion de **Package**, et nous allons en voir un en particulier le **Tidyverse**.
 
@@ -272,8 +293,8 @@ library('tidyverse')
 
 ![**Figure 3**: Le workflow du data scientiste](./img/r4ds-hadley-wickham-workflow.png)
 
-
-### Importer la donnée : <div id="heading--4-2"/>
+<div id="heading--4-2"/>
+### Importer la donnée :
 
 Les données peuvent se trouver sous différentes formes, les plus communes sont :
 
@@ -301,12 +322,6 @@ Dans le cas d'un base de données SQL nous avons besoin d'un certain nombre de p
 
 con <- DBI::dbConnect(RSQLite::SQLite(), "./data/nycflights13.sqlite")
 
-copy_to(con, nycflights13::airports, "airports", temporary = FALSE)
-copy_to(con, nycflights13::flights, "flights", temporary = FALSE)
-copy_to(con, nycflights13::airlines, "airlines", temporary = FALSE)
-copy_to(con, nycflights13::planes, "planes", temporary = FALSE)
-copy_to(con, nycflights13::weather, "weather", temporary = FALSE)
-
 flights_db <- tbl(con, "flights") %>% 
   select(sched_arr_time, arr_delay, carrier, flight, tailnum, origin, dest) %>% 
   dplyr::filter(tailnum == "N14542") %>% 
@@ -316,7 +331,8 @@ flights_db <- tbl(con, "flights") %>%
 flights_db
 ```
 
-### Exploration des données : <div id="heading--4-3"/>
+<div id="heading--4-3"/>
+### Exploration des données :
 
 Pour executer une tache (Transformation, Calcule, Visualisation) sur des données; ces derniere doivent avoir une forme spécifique. Et donc on doit les transformer. pour cela le package **tidyverse** met à notre disposition deux packages: **tidyr** et **dplyr**.
 
@@ -343,8 +359,6 @@ confirmed %>%
   head(.,10)
 ```
 
-
-
 #### Opérations sur les colonnes:
 
 ##### Renomer les colonnes:
@@ -367,19 +381,15 @@ recovered <- recovered %>%
 head(confirmed)
 ```
 
-
 ##### Selcetionner des colonnes:
 
 Le package **dplyr** est a R ce qu'est le language **SQL** a un SGBD. il met a notre disposition enormement d'outils comme la fonction `select`.
 
 
 ```{r}
-
 confirmed %>% 
   select(Province.State, Country.Region, date, confirmed) %>% 
   head()
-
-
 ```
 
 ##### Ajouter une nouvelle colonne:
@@ -399,19 +409,17 @@ recovered <- recovered %>%
   mutate(date = lubridate::mdy(date))
 ```
 
-
 #### Opérations sur les lignes:
 
 Comme pour `select` et `mutate` le package **dplyr** viens avec pleins d'autres fonctions nous en citerons les plus importantes dans cette section.
 
-1. Les filtre:
+##### Les filtre:
 
 Il nous permette de selectionner des lignes qui verifies certaines conditions, la fonction qu'on utilise est `filter`.
 
 ```{r}
 confirmed %>% 
   dplyr::filter(Country.Region == 'Algeria', confirmed > 0)
-
 ```
 
 ##### Arranger les Valeurs:
@@ -473,7 +481,6 @@ confirmed %>%
     geom_line()
 ```
 
-
 ##### Joindre plusieurs data frame:
 
 
@@ -489,11 +496,13 @@ all_data <- confirmed %>%
   left_join(deaths, by = c("Province.State", "Country.Region", "Lat", "Long", "date")) %>%
   left_join(recovered, by = c("Province.State", "Country.Region", "Lat", "Long", "date"))
 
-
 head(all_data)
 ```
 
-## Références : <div id="heading--4" />
+---
+
+<div id="heading--4"/>
+## Références:
 
 1. [**R For Data Science**](https://r4ds.had.co.nz/), par **Garrett Grolemund** et **Hadley Wickham** de *RStudio*.
 2. [**RYouWithMe**](https://rladiessydney.org/courses/ryouwithme/), par **Lisa Williams** de *R-Ladies Sydney*.
