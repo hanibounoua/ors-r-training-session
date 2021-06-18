@@ -31,7 +31,7 @@ logo: ./img/logo.png
 * [4.2. Importer la donnée](#heading--4-2)
 * [4.3. Exploration des données](#heading--4-3)
 
-**[5. Références](#heading--4)**
+**[5. Références](#heading--5)**
 
 ---
 
@@ -501,7 +501,7 @@ head(all_data)
 
 ---
 
-<div id="heading--4"/>
+<div id="heading--5"/>
 ## Références:
 
 1. [**R For Data Science**](https://r4ds.had.co.nz/), par **Garrett Grolemund** et **Hadley Wickham** de *RStudio*.
